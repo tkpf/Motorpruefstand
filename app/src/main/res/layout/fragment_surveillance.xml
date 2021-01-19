@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SurveillanceFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/tvVoltage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="voltage"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvCurrent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="current"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gauge_voltage"
+        android:layout_margin="20dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeEndValue="24"
+        app:gaugePointEndColor="@color/design_default_color_error"
+        app:gaugePointSize="6"
+        app:gaugePointStartColor="@color/design_default_color_error"
+        app:gaugeStartAngle="135"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/white"
+        app:gaugeStrokeWidth="10dp"
+        app:gaugeSweepAngle="270"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVoltage"
+        />
+
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gauge_current"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeEndValue="20"
+        app:gaugePointEndColor="@color/design_default_color_error"
+        app:gaugePointSize="6"
+        app:gaugePointStartColor="@color/design_default_color_error"
+        app:gaugeStartAngle="135"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/white"
+        app:gaugeStrokeWidth="10dp"
+        app:gaugeSweepAngle="270"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrent" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="rotation speed"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gauge_voltage"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvTorque"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="torque"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/gauge_current"
+        android:layout_marginTop="20dp"/>
+
+
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gauge_speed"
+        android:layout_margin="20dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeEndValue="500"
+        app:gaugePointEndColor="@color/design_default_color_error"
+        app:gaugePointSize="6"
+        app:gaugePointStartColor="@color/design_default_color_error"
+        app:gaugeStartAngle="135"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/white"
+        app:gaugeStrokeWidth="10dp"
+        app:gaugeSweepAngle="270"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeed" />
+
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gauge_torque"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeEndValue="40"
+        app:gaugePointEndColor="@color/design_default_color_error"
+        app:gaugePointSize="6"
+        app:gaugePointStartColor="@color/design_default_color_error"
+        app:gaugeStartAngle="135"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/white"
+        app:gaugeStrokeWidth="10dp"
+        app:gaugeSweepAngle="270"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvTorque" />
+
+    <ProgressBar
+        android:id="@+id/progressBarEfficiency"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:progress="0"
+        android:progressTint="@color/design_default_color_error"
+        android:progressTintMode="src_atop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/gauge_torque" />
+
+    <TextView
+        android:id="@+id/tvEfficiency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="efficiency"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gauge_speed" />
+
+    <TextView
+        android:id="@+id/tvEfficiencyPerc"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:textSize="10sp"
+        android:gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/progressBarEfficiency"
+        app:layout_constraintTop_toBottomOf="@+id/gauge_torque" />
+
+    <Button
+        android:id="@+id/btGenerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Generate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/valueSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/gauge_speed"
+        app:layout_constraintEnd_toEndOf="@+id/gauge_speed"
+        app:layout_constraintStart_toStartOf="@+id/gauge_speed"
+        app:layout_constraintTop_toTopOf="@+id/gauge_speed" />
+
+    <TextView
+        android:id="@+id/valueVoltage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/gauge_voltage"
+        app:layout_constraintEnd_toEndOf="@+id/gauge_voltage"
+        app:layout_constraintStart_toStartOf="@+id/gauge_voltage"
+        app:layout_constraintTop_toTopOf="@+id/gauge_voltage" />
+
+    <TextView
+        android:id="@+id/valueCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/gauge_current"
+        app:layout_constraintEnd_toEndOf="@+id/gauge_current"
+        app:layout_constraintStart_toStartOf="@+id/gauge_current"
+        app:layout_constraintTop_toTopOf="@+id/gauge_current" />
+
+    <TextView
+        android:id="@+id/valueTorque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/gauge_torque"
+        app:layout_constraintEnd_toEndOf="@+id/gauge_torque"
+        app:layout_constraintStart_toStartOf="@+id/gauge_torque"
+        app:layout_constraintTop_toTopOf="@+id/gauge_torque" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
